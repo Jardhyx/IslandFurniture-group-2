@@ -41,6 +41,9 @@ document.write('\
                     <li class="storeLocationMenu">\
                         <a href="/B/' + countryPrefix + '/storeLocation.html"><i class="icon icon-map-marker"></i>Store Location</a>\
                     </li>\
+                    <li class="storeServices">\
+                    <a href="/B/' + countryPrefix + '/services.html"><i class="icon icon-gears"></i>Services</a>\
+                    </li>\
                     <li>\
                         <a href="/B/' + countryPrefix + '/memberLogin.html"><i class="icon icon-unlock-alt"></i>Login/Register</a>\
                     </li>\
@@ -60,6 +63,9 @@ document.write('\
                     <li><a id="memberName"></a></li>\
                     <li class="storeLocationMenu">\
                         <a href="/B/' + countryPrefix + '/storeLocation.html"><i class="icon icon-map-marker"></i>Store Location</a>\
+                    </li>\
+                    <li class="storeServices">\
+                        <a href="/B/' + countryPrefix + '/services.html"><i class="icon icon-gears"></i>Services</a>\
                     </li>\
                     <li>\
                         <a href="/B/' + countryPrefix + '/shoppingCart.html"><i class="icon icon-shopping-cart"></i>Shopping Cart</a>\
