@@ -41,6 +41,9 @@ document.write('\
                     <li class="storeLocationMenu">\
                         <a href="/B/' + countryPrefix + '/storeLocation.html"><i class="icon icon-map-marker"></i>Store Location</a>\
                     </li>\
+                    <li class="storeServices">\
+                    <a href="/B/' + countryPrefix + '/services.html"><i class="icon icon-gears"></i>Services</a>\
+                    </li>\
                     <li>\
                         <a href="/B/' + countryPrefix + '/memberLogin.html"><i class="icon icon-unlock-alt"></i>Login/Register</a>\
                     </li>\
@@ -60,6 +63,9 @@ document.write('\
                     <li><a id="memberName"></a></li>\
                     <li class="storeLocationMenu">\
                         <a href="/B/' + countryPrefix + '/storeLocation.html"><i class="icon icon-map-marker"></i>Store Location</a>\
+                    </li>\
+                    <li class="storeServices">\
+                        <a href="/B/' + countryPrefix + '/services.html"><i class="icon icon-gears"></i>Services</a>\
                     </li>\
                     <li>\
                         <a href="/B/' + countryPrefix + '/shoppingCart.html"><i class="icon icon-shopping-cart"></i>Shopping Cart</a>\
@@ -89,7 +95,7 @@ document.write('\
                     </li>\
                     <li class="dropdown">\
                         <a class="dropdown-toggle" href="#">\
-                            Product Categories<i class="icon icon-angle-down"></i>\
+                            Product Categories <i class="icon icon-angle-down"></i>\
                         </a>\
                         <ul class="dropdown-menu">\
                             <li><a id="tableDeskLink"><i class="icon icon-map-marker"></i> Tables & Desk</a></li>\
@@ -102,6 +108,9 @@ document.write('\
                             <li><a href="/B/' + countryPrefix + '/furnitureCategory.html?cat=Children"><i class="icon icon-map-marker"></i> Children</a></li>\
                             <li><a id="retailProductLink"><i class="icon icon-coffee"></i> Retail Products</a></li>\
                         </ul>\
+                    </li>\
+                    <li>\
+                        <a href="/B/' + countryPrefix + '/retailProductsCategory.html"> Retail Products</a>\
                     </li>\
                 </ul>\
             </nav>\
