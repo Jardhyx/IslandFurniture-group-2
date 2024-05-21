@@ -106,11 +106,10 @@ document.write('\
                             <li><a href="/B/' + countryPrefix + '/furnitureCategory.html?cat=Lightings"><i class="icon icon-map-marker"></i> Lightings</a></li>\
                             <li><a href="/B/' + countryPrefix + '/furnitureCategory.html?cat=Study"><i class="icon icon-map-marker"></i> Study</a></li>\
                             <li><a href="/B/' + countryPrefix + '/furnitureCategory.html?cat=Children"><i class="icon icon-map-marker"></i> Children</a></li>\
-                            <li><a id="retailProductLink"><i class="icon icon-coffee"></i> Retail Products</a></li>\
                         </ul>\
                     </li>\
-                    <li>\
-                        <a href="/B/' + countryPrefix + '/retailProductsCategory.html"> Retail Products</a>\
+                <li>\
+                    <a id="retailProductLink"></i> Retail Products</a>\
                     </li>\
                 </ul>\
             </nav>\
