@@ -89,7 +89,7 @@ document.write('\
                     </li>\
                     <li class="dropdown">\
                         <a class="dropdown-toggle" href="#">\
-                            Product Categories<i class="icon icon-angle-down"></i>\
+                            Product Categories <i class="icon icon-angle-down"></i>\
                         </a>\
                         <ul class="dropdown-menu">\
                             <li><a id="tableDeskLink"><i class="icon icon-map-marker"></i> Tables & Desk</a></li>\
@@ -102,6 +102,9 @@ document.write('\
                             <li><a href="/B/' + countryPrefix + '/furnitureCategory.html?cat=Children"><i class="icon icon-map-marker"></i> Children</a></li>\
                             <li><a id="retailProductLink"><i class="icon icon-coffee"></i> Retail Products</a></li>\
                         </ul>\
+                    </li>\
+                    <li>\
+                        <a href="/B/' + countryPrefix + '/retailProductsCategory.html"> Retail Products</a>\
                     </li>\
                 </ul>\
             </nav>\
