@@ -6,10 +6,12 @@ document.write('\
         if(memberEmail == null || memberEmail == "") {\
             document.getElementById("menuLoggedOut").setAttribute("style", "display:block");\
             document.getElementById("menuLoggedIn").setAttribute("style", "display:none");\
+            document.getElementById("favouritesLinkContainer").setAttribute("style", "display:none");\
         }\
         else {\
             document.getElementById("menuLoggedOut").setAttribute("style", "display:none");\
             document.getElementById("menuLoggedIn").setAttribute("style", "display:block");\
+            document.getElementById("favouritesLinkContainer").setAttribute("style", "display:block");\
             var welcomeText = sessionStorage.getItem("memberName");\
             if(welcomeText == "null") {\
                 welcomeText = "";\
@@ -21,6 +23,7 @@ document.write('\
         document.getElementById("sofaChairLink").setAttribute("href", "/B/' + countryPrefix + '/furnitureCategory.html?cat=" + encodeURIComponent("Sofas & Chair"));\
         document.getElementById("cabinetStorageLink").setAttribute("href", "/B/' + countryPrefix + '/furnitureCategory.html?cat=" + encodeURIComponent("Cabinets & Storage"));\
         document.getElementById("retailProductLink").setAttribute("href", "/B/' + countryPrefix + '/retailProductsCategory.html?cat=" + encodeURIComponent("All Retail Products"));\
+        document.getElementById("favouritesLink").setAttribute("href", "/B/' + countryPrefix + '/favourites.html?cat=" + encodeURIComponent("Favourites"));\
     }, false);\
     function logout() {\
         sessionStorage.clear();\
@@ -41,6 +44,9 @@ document.write('\
                     <li class="storeLocationMenu">\
                         <a href="/B/' + countryPrefix + '/storeLocation.html"><i class="icon icon-map-marker"></i>Store Location</a>\
                     </li>\
+                    <li class="storeServices">\
+                    <a href="/B/' + countryPrefix + '/services.html"><i class="icon icon-gears"></i>Services</a>\
+                    </li>\
                     <li>\
                         <a href="/B/' + countryPrefix + '/memberLogin.html"><i class="icon icon-unlock-alt"></i>Login/Register</a>\
                     </li>\
@@ -60,6 +66,9 @@ document.write('\
                     <li><a id="memberName"></a></li>\
                     <li class="storeLocationMenu">\
                         <a href="/B/' + countryPrefix + '/storeLocation.html"><i class="icon icon-map-marker"></i>Store Location</a>\
+                    </li>\
+                    <li class="storeServices">\
+                        <a href="/B/' + countryPrefix + '/services.html"><i class="icon icon-gears"></i>Services</a>\
                     </li>\
                     <li>\
                         <a href="/B/' + countryPrefix + '/shoppingCart.html"><i class="icon icon-shopping-cart"></i>Shopping Cart</a>\
@@ -89,7 +98,7 @@ document.write('\
                     </li>\
                     <li class="dropdown">\
                         <a class="dropdown-toggle" href="#">\
-                            Product Categories<i class="icon icon-angle-down"></i>\
+                            Product Categories <i class="icon icon-angle-down"></i>\
                         </a>\
                         <ul class="dropdown-menu">\
                             <li><a id="tableDeskLink"><i class="icon icon-map-marker"></i> Tables & Desk</a></li>\
@@ -100,8 +109,13 @@ document.write('\
                             <li><a href="/B/' + countryPrefix + '/furnitureCategory.html?cat=Lightings"><i class="icon icon-map-marker"></i> Lightings</a></li>\
                             <li><a href="/B/' + countryPrefix + '/furnitureCategory.html?cat=Study"><i class="icon icon-map-marker"></i> Study</a></li>\
                             <li><a href="/B/' + countryPrefix + '/furnitureCategory.html?cat=Children"><i class="icon icon-map-marker"></i> Children</a></li>\
-                            <li><a id="retailProductLink"><i class="icon icon-coffee"></i> Retail Products</a></li>\
                         </ul>\
+                    </li>\
+                    <li>\
+                        <a id="retailProductLink"></i> Retail Products</a>\
+                    </li>\
+                    <li id="favouritesLinkContainer" style="display: none;">\
+                        <a id="favouritesLink"></i> Favourites</a>\
                     </li>\
                 </ul>\
             </nav>\
