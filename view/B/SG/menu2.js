@@ -111,12 +111,6 @@ document.write('\
                             <li><a href="/B/' + countryPrefix + '/furnitureCategory.html?cat=Children"><i class="icon icon-map-marker"></i> Children</a></li>\
                         </ul>\
                     </li>\
-                    <li>\
-                        <a id="retailProductLink"></i> Retail Products</a>\
-                    </li>\
-                    <li id="favouritesLinkContainer" style="display: none;">\
-                        <a id="favouritesLink"></i> Favourites</a>\
-                    </li>\
                 </ul>\
             </nav>\
         </div>\

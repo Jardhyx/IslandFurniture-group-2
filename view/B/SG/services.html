@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="../checkCountry.js"></script>
+    <script src="../../header.js"></script>
+    <style>
+        .custom-grid-line {
+            border: 1px solid #a4a4a4;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: center; /* Center align content */
+        }
+
+        .collapse-card {
+            background-color: #f8f9fa; /* Light gray background color */
+            border: 1px solid #d1d3e2; /* Light border */
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+        .collapse-card p {
+            margin-bottom: 0; /* Remove bottom margin for paragraphs */
+        }
+        .btn {
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <script src="menu2.js"></script>
+    </div>
+    <div role="main" class="main">
+        <section class="page-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Services</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <div class="row">
+                <!-- First service -->
+                <div class="col-md-4">
+                    <a class="btn btn-danger" data-toggle="collapse" href="#services1desc" role="button"
+                        aria-expanded="false" aria-controls="services1desc">Delivery</a>
+                    <div class="collapse multi-collapse" id="services1desc">
+                        <div class="collapse-card">
+                            <strong>"You can take it home yourself, but you don't have to !"</strong>
+                            <p>Flat-packed products are easy and efficient for you to transport. But you can also arrange delivery
+                                straight to your home or your business. If you prefer to have your purchase delivered, we have a wide
+                                array of delivery options to pick from when shopping at Island Furniture.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second service -->
+                <div class="col-md-4">
+                    <a class="btn btn-danger" data-toggle="collapse" href="#services2desc" role="button"
+                        aria-expanded="false" aria-controls="services2desc">Assembly</a>
+                    <div class="collapse multi-collapse" id="services2desc">
+                        <div class="collapse-card">
+                            <strong>"You can build it yourself, but you don't have to !"</strong>
+                            <p>Our assembly fee is 20% of the original product retail price for all other furniture that
+                                requires assembly, and 10% of the original product retail price for sofa and sofa bed items.
+                                This service is only available for truck deliveries and also includes the installation of
+                                tip-over restraints for safety purposes. However, the service does not include electrical
+                                and plumbing. Click here to see the details of the service.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third service -->
+                <div class="col-md-4">
+                    <a class="btn btn-danger" data-toggle="collapse" href="#services3desc" role="button"
+                        aria-expanded="false" aria-controls="services3desc">Planning Guides & Tools</a>
+                    <div class="collapse multi-collapse" id="services3desc">
+                        <div class="collapse-card">
+                            <strong>"You can plan it yourself, but you don't have to !"</strong>
+                            <p>With our planning tools, take your first step to becoming your own designer! Browse our many
+                                solutions and customize your sofa, wardrobes, workspaces, or even the bathroom. Please note
+                                that planning tools may take some time to be delivered in the process. Approach our co-workers
+                                at your Island Furniture store to help you with any home furnishing or design needs you have.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../footer.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
