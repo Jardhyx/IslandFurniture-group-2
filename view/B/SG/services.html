@@ -4,6 +4,7 @@
 <head>
     <script src="../checkCountry.js"></script>
     <script src="../../header.js"></script>
+    
     <style>
         .custom-grid-line {
             border: 1px solid #a4a4a4;
@@ -20,11 +21,20 @@
             padding: 15px;
             margin-top: 10px;
         }
+
         .collapse-card p {
             margin-bottom: 0; /* Remove bottom margin for paragraphs */
         }
+
         .btn {
             font-size: 18px;
+        }
+
+        .service-image {
+            width: 100%; /* Make sure the image fills the container's width */
+            height: 200px; /* Fixed height for all images */
+            object-fit: cover; /* Ensure the image covers the area without stretching */
+            margin-bottom: 10px; /* Space between the image and the button */
         }
 
     </style>
@@ -48,20 +58,25 @@
             <div class="row">
                 <!-- First service -->
                 <div class="col-md-4">
+                    <img src="../img/delivery.jpg" alt="Delivery Service" class="service-image">
+
                     <a class="btn btn-danger" data-toggle="collapse" href="#services1desc" role="button"
                         aria-expanded="false" aria-controls="services1desc">Delivery</a>
                     <div class="collapse multi-collapse" id="services1desc">
                         <div class="collapse-card">
                             <strong>"You can take it home yourself, but you don't have to !"</strong>
-                            <p>Flat-packed products are easy and efficient for you to transport. But you can also arrange delivery
-                                straight to your home or your business. If you prefer to have your purchase delivered, we have a wide
-                                array of delivery options to pick from when shopping at Island Furniture.</p>
+                            <p>Flat-packed products are easy and efficient for you to transport. 
+                                But you can also arrange delivery straight to your home or your business. 
+                                If you prefer to have your purchase delivered, we have a wide array of delivery options to pick from when shopping at Island Furniture. 
+                                Our delivery services are designed to be flexible and convenient, ensuring that your items arrive safely and on time. 
+                                </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Second service -->
                 <div class="col-md-4">
+                    <img src="../img/assembly.jpg" alt="Assembly Service" class="service-image">
                     <a class="btn btn-danger" data-toggle="collapse" href="#services2desc" role="button"
                         aria-expanded="false" aria-controls="services2desc">Assembly</a>
                     <div class="collapse multi-collapse" id="services2desc">
@@ -71,13 +86,14 @@
                                 requires assembly, and 10% of the original product retail price for sofa and sofa bed items.
                                 This service is only available for truck deliveries and also includes the installation of
                                 tip-over restraints for safety purposes. However, the service does not include electrical
-                                and plumbing. Click here to see the details of the service.</p>
+                                and plumbing.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Third service -->
                 <div class="col-md-4">
+                    <img src="../img/planningguide.jpg" alt="Planning Guides & Tools" class="service-image">
                     <a class="btn btn-danger" data-toggle="collapse" href="#services3desc" role="button"
                         aria-expanded="false" aria-controls="services3desc">Planning Guides & Tools</a>
                     <div class="collapse multi-collapse" id="services3desc">
@@ -85,8 +101,9 @@
                             <strong>"You can plan it yourself, but you don't have to !"</strong>
                             <p>With our planning tools, take your first step to becoming your own designer! Browse our many
                                 solutions and customize your sofa, wardrobes, workspaces, or even the bathroom. Please note
-                                that planning tools may take some time to be delivered in the process. Approach our co-workers
-                                at your Island Furniture store to help you with any home furnishing or design needs you have.</p>
+                                that some planning tools may take some time to be delivered in the process. Approach any of
+                                our co-workers at your Island Furniture store near you to help you with any home furnishing 
+                                or design needs you have.</p>
                         </div>
                     </div>
                 </div>
