@@ -45,7 +45,7 @@
                                         <img alt=""  class="img-responsive" src="' + furniture.imageURL + '">\
                                     </span>\
                                     <span class="product-thumb-info-content">\
-                                        <h4>' + furniture.name + ' <i class="far fa-heart icon-heart clickable-heart" id="heart-' + furniture.sku + '" onclick="toggleFavourites(\'' + furniture.sku + '\')"></i></h4>\
+                                        <h4>' + furniture.name + ' <i class="far fa-heart icon-heart clickable-heart" id="heart-' + furniture.sku + '" onclick="toggleFavourites(\'' + furniture.sku + '\', \'' + furniture.id + '\', ' + furniture.price + ', \'' + furniture.name + '\', \'' + furniture.imageURL + '\')"></i></h4>\
                                         <span class="product-thumb-info-act-left">\
                                             <em>Height: ' + furniture.height + '</em>\
                                         </span><br/>\
@@ -74,9 +74,12 @@
                    
                     document.getElementById("furnituresDisplay").innerHTML = htmlTxt;
                     document.getElementById("categoryTitle").innerHTML = cat;
+                    initializeFavouriteHearts();
+
                 }).catch(function(error) {
                     console.log(error);
                 });
+
             }, false);
 
             function addToCart(sku,id,price,name,imageURL) {

@@ -115,7 +115,7 @@ document.write('\
                         <a id="retailProductLink"></i> Retail Products</a>\
                     </li>\
                     <li id="favouritesLinkContainer" style="display: none;">\
-                        <a id="favouritesLink"></i> Favourite</a>\
+                        <a id="favouritesLink"></i> Favourites</a>\
                     </li>\
                 </ul>\
             </nav>\

@@ -1,19 +1,35 @@
-async function toggleFavourites(sku) {
+function toggleFavourites(sku, id, price, name, imageURL) {
     try {
         // Check if user is logged in
         var memberEmail = sessionStorage.getItem('memberEmail');
-        var memberId = sessionStorage.getItem('memberId'); // Assuming memberId is stored in session storage
         if (memberEmail != null && memberEmail != '') {
             var heartIcon = document.getElementById('heart-' + sku);
-            if (heartIcon.classList.contains('filled')) {
-                heartIcon.classList.remove('filled', 'fas');
+            var favourites = JSON.parse(localStorage.getItem('favourites')) || {};
+
+            if (heartIcon.classList.contains('filled-heart')) {
+                // Unfill the heart and remove from favourites
+                heartIcon.classList.remove('filled-heart', 'fas');
                 heartIcon.classList.add('far');
-                await removeFromFavourites(memberId, sku);
+                delete favourites[sku];
             } else {
-                heartIcon.classList.add('filled', 'fas');
+                // Fill the heart and add to favourites
+                heartIcon.classList.add('filled-heart', 'fas');
                 heartIcon.classList.remove('far');
-                await addToFavourites(memberId, sku);
+                favourites[sku] = true;
+                if (favourites == null || favourites == '') {
+                    favourites = [];
+                    favourites.push({
+                        id: id,
+                        sku: sku,
+                        price: price,
+                        name: name,
+                        imgURL: imageURL
+                    })
+                }
             }
+
+            // Update localStorage
+            localStorage.setItem('favourites', JSON.stringify(favourites));
         } else {
             window.location.href = 'memberLogin.html';
         }
@@ -22,34 +38,16 @@ async function toggleFavourites(sku) {
     }
 }
 
-async function addToFavourites(memberId, sku) {
-    try {
-        const response = await fetch('http://localhost:8081/api/addToFavourites', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ memberId, itemId: sku })
-        });
-        const result = await response.json();
-        console.log('Added to favourites:', result);
-    } catch (error) {
-        console.error('Error adding to favourites:', error);
+// This function is to set the initial state of hearts based on localStorage
+function initializeFavouriteHearts() {
+    var favourites = JSON.parse(localStorage.getItem('favourites')) || {};
+    for (var sku in favourites) {
+        var heartIcon = document.getElementById('heart-' + sku);
+        if (heartIcon) {
+            heartIcon.classList.add('filled-heart', 'fas');
+            heartIcon.classList.remove('far');
+        }
     }
 }
 
-async function removeFromFavourites(memberId, sku) {
-    try {
-        const response = await fetch('http://localhost:8081/api/removeFromFavourites', {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ memberId, itemId: sku })
-        });
-        const result = await response.json();
-        console.log('Removed from favourites:', result);
-    } catch (error) {
-        console.error('Error removing from favourites:', error);
-    }
-}
+
