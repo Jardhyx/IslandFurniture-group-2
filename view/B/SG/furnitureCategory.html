@@ -1,6 +1,20 @@
 <script src="../checkCountry.js" ></script>
 <html>
     <script src="../../header.js"></script>
+    <script src="toggleFavourites.js"></script>
+    <style>
+        .fa-heart {
+            color: red;
+        }
+
+        .filled-heart {
+            color: red;
+        }
+
+        .clickable-heart {
+            cursor: pointer;
+        }
+    </style>
     <body>
         <script>
             //get category from query parameter
@@ -30,7 +44,7 @@
                                         <img alt=""  class="img-responsive" src="' + furniture.imageURL + '">\
                                     </span>\
                                     <span class="product-thumb-info-content">\
-                                        <h4>' + furniture.name + '</h4>\
+                                        <h4>' + furniture.name + ' <i class="far fa-heart icon-heart clickable-heart" id="heart-' + furniture.sku + '" onclick="toggleFavourites(\'' + furniture.sku + '\')"></i></h4>\
                                         <span class="product-thumb-info-act-left">\
                                             <em>Height: ' + furniture.height + '</em>\
                                         </span><br/>\
