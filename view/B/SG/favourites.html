@@ -10,11 +10,38 @@
         margin-bottom: 20px;
         border: 1px solid #ccc;
         padding: 10px;
+        list-style-type: none;
     }
 
     .product img {
         max-width: 100%;
         height: auto;
+    }
+
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .fa-heart {
+        color: red;
+    }
+
+    .filled-heart {
+        color: red;
+    }
+
+    .clickable-heart {
+        cursor: pointer;
+    }
+
+    #favouritesMessage {
+        min-height: 87px;
+        font-size: 20px;
     }
 </style>
 
@@ -43,32 +70,34 @@
         });
 
     document.addEventListener('DOMContentLoaded', function () {
-        console.log(localStorage.favourites)
+        initializeFavouriteHearts();
 
-        var favourites = JSON.parse(localStorage.getItem('favourites')) || {}; 
+        var favourites = JSON.parse(localStorage.getItem('favourites')) || {};
         var favouritesList = document.getElementById('favouritesList');
+        var favouritesMessage = document.getElementById('favouritesMessage');
 
         // Clear previous content
         favouritesList.innerHTML = '';
 
         // Check if favourites is an object before iterating
-        if (typeof favourites === 'object' && favourites !== null) {
+        if (typeof favourites === 'object' && favourites !== null && Object.keys(favourites).length > 0) {
+            favouritesMessage.style.display = 'none';
             for (var sku in favourites) {
                 if (favourites.hasOwnProperty(sku)) {
                     var product = favourites[sku];
                     var productHTML = '<li class="product">' +
                         '<h3>' + product.name + '</h3>' +
                         '<img src="' + product.imgURL + '" alt="' + product.name + '">' +
-                        '<p>Price: $' + product.price + '</p>' +
+                        '<p>Price: $' + product.price.toFixed(2) + '</p>' +
+                        '<i class="fas fa-heart icon-heart filled-heart" id="heart-' + product.sku + '" onclick="toggleFavourites(\'' + product.sku + '\', \'' + product.id + '\', ' + product.price + ', \'' + product.name + '\', \'' + product.imgURL + '\')"></i>' +
                         '</li>';
                     favouritesList.insertAdjacentHTML('beforeend', productHTML);
                 }
             }
         } else {
-            console.error('Favourites is not a valid JSON object.');
+            favouritesMessage.textContent = 'No products favourited.';
         }
     });
-
 </script>
 
 <body>
@@ -81,15 +110,13 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2>Favourites</h2>
-                        <ul id="favouritesList" class="products"></ul>
                     </div>
                 </div>
             </div>
         </section>
         <div class="container">
-            <p>
-
-            </p>
+            <p id="favouritesMessage"></p>
+            <ul id="favouritesList" class="products"></ul>
         </div>
     </div>
     <script src="../footer.js"></script>

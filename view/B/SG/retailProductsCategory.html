@@ -1,6 +1,20 @@
 <script src="../checkCountry.js" ></script>
 <html>
     <script src="../../header.js"></script>
+    <script src="toggleFavourites.js"></script>
+    <style>
+        .fa-heart {
+            color: red;
+        }
+
+        .filled-heart {
+            color: red;
+        }
+
+        .clickable-heart {
+            cursor: pointer;
+        }
+    </style>
     <body>
         <script>
             var countryPrefix = localStorage.getItem('urlPrefix');
@@ -30,7 +44,7 @@
                                         <img alt="" class="img-responsive" src="' + product.imageURL + '">\
                                     </span>\
                                     <span class="product-thumb-info-content">\
-                                        <h4>' + product.name + '</h4>\
+                                        <h4>' + product.name + ' <i class="far fa-heart icon-heart clickable-heart" id="heart-' + product.sku + '" onclick="toggleFavourites(\'' + product.sku + '\', \'' + product.id + '\', ' + product.price + ', \'' + product.name + '\', \'' + product.imageURL + '\')"></i></h4>\
                                         <span class="product-thumb-info-act-left">\
                                             <em>Price: $' + product.price + '.00</em>\
                                         </span><br/>\
@@ -44,6 +58,8 @@
                 
                     document.getElementById("retailProductsDisplay").innerHTML = htmlTxt;
                     document.getElementById("categoryTitle").innerHTML = cat;
+                    initializeFavouriteHearts();
+
                 }).catch(function(error) {
                     console.log(error);
                 });
