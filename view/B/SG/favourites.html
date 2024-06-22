@@ -93,11 +93,22 @@
             for (var sku in favourites) {
                 if (favourites.hasOwnProperty(sku)) {
                     var product = favourites[sku];
+                    var pageURL = '';
+
+                    // Check if SKU starts with 'R' or 'F'
+                    if (product.sku.startsWith('R')) {
+                        pageURL = '/B/' + countryPrefix + '/retailProductDetails.html?sku=' + product.sku;
+                    } else if (product.sku.startsWith('F')) {
+                        pageURL = '/B/' + countryPrefix + '/furnitureProductDetails.html?sku=' + product.sku;
+                    }
+
                     var productHTML = '<li class="product">' +
+                        '<a href="' + pageURL + '" style="text-decoration: none; color: inherit;">' +
                         '<h3>' + product.name + '</h3>' +
                         '<img src="' + product.imgURL + '" alt="' + product.name + '">' +
                         '<p>Price: $' + product.price.toFixed(2) + '</p>' +
-                        '<i class="fas fa-heart icon-heart clickable-heart large-heart filled-heart" id="heart-' + product.sku + '" onclick="toggleFavourites(\'' + product.sku + '\', \'' + product.id + '\', ' + product.price + ', \'' + product.name + '\', \'' + product.imgURL + '\')"></i>' +
+                        '</a>' +
+                        '<i class="fas fa-heart icon-heart clickable-heart large-heart filled-heart" id="heart-' + product.sku + '" onclick="toggleFavourites(\'' + product.sku + '\', \'' + product.id + '\', ' + product.price + ', \'' + product.name + '\', \'' + product.imgURL + '\'); event.stopPropagation();"></i>' +
                         '</li>';
                     favouritesList.insertAdjacentHTML('beforeend', productHTML);
                 }
