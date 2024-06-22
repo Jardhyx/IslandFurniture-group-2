@@ -43,6 +43,14 @@
         min-height: 87px;
         font-size: 20px;
     }
+
+    .large-heart {
+        font-size: 24px;
+    }
+
+    .icon-heart {
+        margin-left: 10px;
+    }
 </style>
 
 <script>
@@ -89,7 +97,7 @@
                         '<h3>' + product.name + '</h3>' +
                         '<img src="' + product.imgURL + '" alt="' + product.name + '">' +
                         '<p>Price: $' + product.price.toFixed(2) + '</p>' +
-                        '<i class="fas fa-heart icon-heart filled-heart" id="heart-' + product.sku + '" onclick="toggleFavourites(\'' + product.sku + '\', \'' + product.id + '\', ' + product.price + ', \'' + product.name + '\', \'' + product.imgURL + '\')"></i>' +
+                        '<i class="fas fa-heart icon-heart clickable-heart large-heart filled-heart" id="heart-' + product.sku + '" onclick="toggleFavourites(\'' + product.sku + '\', \'' + product.id + '\', ' + product.price + ', \'' + product.name + '\', \'' + product.imgURL + '\')"></i>' +
                         '</li>';
                     favouritesList.insertAdjacentHTML('beforeend', productHTML);
                 }
