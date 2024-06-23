@@ -29,6 +29,7 @@ function toggleFavourites(sku, id, price, name, imageURL) {
             localStorage.setItem('favourites', JSON.stringify(favourites));
             window.location.reload();
         } else {
+            alert('Please login to add to favourites.');
             window.location.href = 'memberLogin.html';
         }
     } catch (error) {
